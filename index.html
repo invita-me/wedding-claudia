@@ -1,711 +1,591 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
-
-<head>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Te invito a mi boda &mdash; Diana & Ricardo</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Invitacion a bonda" />
-	<meta name="keywords" content="wedding" />
-	<meta name="author" content="kihdza" />
-
-
-	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:site_name" content="" />
-	<meta property="og:description" content="" />
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet'
-		type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/audio.css">
-	<link rel="stylesheet" href="css/gallery.css">
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-	<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-	<link rel="manifest" href="images/site.webmanifest">
-
-	<style>
-		p.gallery {
-			height: 200px;
-			width: 500px;
-			margin: 100px auto;
-			position: relative;
-		}
-
-		img.gallery {
-			height: 100px;
-			position: absolute;
-			left: 0;
-			offset-path: path('m 0 50 q 50-30 100-30 t 100 30 100 0 100-30 100 30');
-			box-shadow: 1px 1px 3px #0008;
-			transition: transform .4s ease-out, offset-path .4s cubic-bezier(.77, -1.17, .75, .84), box-shadow .3s, z-index .3s;
-			z-index: 0;
-		}
-
-		img.gallery:hover {
-			transform: scale(3);
-			/* on hover, the path gets a bit shorter & flattened & shifted to left/bottom a bit for nicer movement */
-			offset-path: path('m 5 65 q 45-0 90-0 t 90 0 90 0 90-0 90 0');
-			box-shadow: 3px 4px 10px #0006;
-			/* ensures that image gets on top of stack at the start of "popping" animation
-     and gets back at the end of getting back. With smaller value, 2 different transitions would be needed */
-			z-index: 999;
-		}
-
-		/* 3 images */
-		img.gallery:nth-last-child(3):first-child {
-			offset-distance: 17%;
-		}
-
-		img.gallery:nth-last-child(2):nth-child(2) {
-			offset-distance: 49%;
-		}
-
-		img.gallery:last-child:nth-child(3) {
-			offset-distance: 81%;
-		}
-
-		/* 4 images */
-		img.gallery:nth-last-child(4):first-child {
-			offset-distance: 10%;
-		}
-
-		img.gallery:nth-last-child(3):nth-child(2) {
-			offset-distance: 35%;
-		}
-
-		img.gallery:nth-last-child(2):nth-child(3) {
-			offset-distance: 65%;
-		}
-
-		img.gallery:last-child:nth-child(4) {
-			offset-distance: 90%;
-		}
-
-		/* 5 images */
-		img.gallery:nth-last-child(5):first-child {
-			offset-distance: 0%;
-		}
-
-		img.gallery:nth-last-child(4):nth-child(2) {
-			offset-distance: 25%;
-		}
-
-		img.gallery:nth-last-child(3):nth-child(3) {
-			offset-distance: 51%;
-		}
-
-		img.gallery:nth-last-child(2):nth-child(4) {
-			offset-distance: 75%;
-		}
-
-		img.gallery:last-child:nth-child(5) {
-			offset-distance: 100%;
-		}
-	</style>
-
-</head>
-
-<body>
-
-	<div class="fh5co-loader"></div>
-
-	<div id="page">
-		<nav class="fh5co-nav" role="navigation">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-xs-10 text-right menu-1">
-						<ul>
-							<li class="active"><a href="index.html">Inicio</a></li>
-							<li><a href="#" onclick="getPases()">Confirmar asistencia</a></li>
-							<li class="has-dropdown">
-								<a href="gallery.html">Galería</a>
-								<ul class="dropdown">
-									<li><a href="#">Propuesta</a></li>
-									<li><a href="#">Save the date</a></li>
-									<li><a href="#">Despedida</a></li>
-									<li><a href="#">Ceremonia religiosa</a></li>
-									<li><a href="#">Recepción</a></li>
-									<li><a href="#">Fiesta</a></li>
-								</ul>
-							</li>
-							<li><a href="https://wa.me/527294776165">Contactanos</a></li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-		</nav>
-
-		<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/1.jpeg);"
-			data-stellar-background-ratio="0.5">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="display-t">
-							<div class="display-tc animate-box" data-animate-effect="fadeIn">
-								<h1>Diana &amp; Ricardo</h1>
-								<h2>¡Nos casamos!</h2>
-								<div class="simply-countdown simply-countdown-one"></div>
-								<p><a id="start" href="#fh5co-couple" class="btn btn-default btn-sm">Empecemos</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-		<script>
-
-			function getPases() {
-				console.log("pases");
-				const urlParams = new URLSearchParams(window.location.search);
-				var pases = urlParams.get("type");
-				var nombre = urlParams.get("guest");
-				console.log(nombre);
-				if (nombre == null || nombre == "") {
-					nombre == "NO IDENTIFICADO";
-
-				}
-				if (pases != null) {
-					pases = pases.toLowerCase();
-
-				}
-				url1 = `https://docs.google.com/forms/d/e/1FAIpQLSebLXrL0gPs9y1muG0-LDTRDCck0Dno4cxW8LStl0fA3amj4g/viewform?usp=header&entry.1542272430=${nombre}`,
-					url2 = `https://docs.google.com/forms/d/e/1FAIpQLSfQQtDwNVT_qdDDrEqbZwM7rwN8cWFQIkTIszIC3tkUxa9Hug/viewform?usp=header&entry.1542272430=${nombre}`,
-					url3 = `https://docs.google.com/forms/d/e/1FAIpQLSdBE95K0QFHN24kX7O62d2BnDYckHRl7AO4mSnyQi-zS1rGOg/viewform?usp=header&entry.1542272430=${nombre}`,
-					url4 = `https://docs.google.com/forms/d/e/1FAIpQLSemTkEVyFvrmUlCpUqa6rwAd5oJUglSXhnduBPYqZ1-yoR8Hw/viewform?usp=header&entry.1542272430=${nombre}`,
-					console.log(pases);
-				if (pases == 'alfa') {
-					location.href = url1;
-				}
-				else if (pases == 'gamma') {
-					location.href = url3;
-				}
-				else if (pases == 'delta') {
-					location.href = url4;
-				}
-				else {
-					location.href = url2;
-				}
-			}
-
-
-
-
-
-
-			// For element-level scrolling (assuming an element with id 'myElement')
-			const myElement = document.getElementById('start');
-			if (myElement) {
-				myElement.addEventListener('click', function () {
-					const audio = document.querySelector('audio');
-					audio.play().then(() => {
-						// Reproducción automática iniciada
-					}).catch(error => {
-						// La reproducción automática falló, probablemente porque el usuario no ha interactuado
-					});
-					console.log('Element clicked!');
-				});
-			}
-
-		</script>
-
-		<div id="fh5co-couple">
-			<div class="container">
-
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<h2>Hola!</h2>
-						<h3>Noviembre 30, 2025 Morelia, Mich</h3>
-						<p>Con el amor que nos une, la bendición de Dios y el apoyo de nuestros padres y padrinos, te
-							invitamos a
-							celebrar nuestra boda.</p>
-					</div>
-				</div>
-				<div class="couple-wrap animate-box">
-					<div class="couple-half">
-						<div class="groom">
-							<img src="images/3.jpeg" alt="groom" class="img-responsive">
-						</div>
-						<div class="desc-groom" oefr>
-							<h3>Diana Hernández</h3>
-							<p>"El amor es paciente, es bondadoso; el amor no es envidioso ni jactancioso, no se
-								envanece; no hace nada indebido, no busca lo suyo, no se irrita, no guarda rencor; no se
-								goza de la injusticia, sino que se goza de la verdad. Todo lo disculpa, todo lo cree,
-								todo lo espera, todo lo soporta.” 1 Corintios 13:4-7</p>
-						</div>
-					</div>
-					<p class="heart text-center"><i class="icon-heart2"></i></p>
-					<div class="couple-half">
-						<div class="bride">
-							<img src="images/2.jpeg" alt="groom" class="img-responsive">
-						</div>
-						<div class="desc-bride">
-							<h3>Ricardo Ambriz</h3>
-							<p>Hoy unimos nuestras vidas, nuestros sueños y nuestros corazones.
-								Elegirnos será nuestra promesa diaria, en las alegrías y en los desafíos.
-								Prometemos apoyarnos, reír juntos y amarnos sin medida.
-								Cada día será un nuevo capítulo de nuestra historia, escrito con amor, fe y felicidad.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
-		<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/5.jpeg);">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="display-t">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<h2>Cortejo nupcial</h2>
-					</div>
-					<div class="row">
-
-						<div class="display-tc">
-							<div class="col-md-4 col-sm-6 animate-box">
-
-								<div class="feature-center">
-
-
-									<span class="counter">Padres de la novia</span>
-									<span class="counter-label">Ma. Flora Aburto Pérez<br>Darío Gerardo Hernández
-										López</span>
-
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-6 animate-box">
-								<div class="feature-center">
-
-
-									<span class="counter">Padres del novio</span>
-									<span class="counter-label">Silvia Villarreal Cazáres<br>Pablo Ambriz León</span>
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-6 animate-box">
-								<div class="feature-center">
-									<span class="counter">Padrinos de velación</span>
-									<span class="counter-label">Rosalía Hernández Sánchez<br>Raúl Zamora
-										Rangel</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="fh5co-couple-story">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<h2>Itinerario de boda</h2>
-						<p>El plan perfecto para celebrar el amor.</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 col-md-offset-0">
-						<ul class="timeline animate-box">
-							<li class="animate-box">
-								<div class="timeline-badge" style="background-image:url(images/iglesia.png);"></div>
-								<div class="timeline-panel">
-									<div class="timeline-body">
-										<p>05:00 PM. Ceremonia religiosa.</p>
-									</div>
-								</div>
-							</li>
-							<li class="timeline-inverted animate-box">
-								<div class="timeline-badge" style="background-image:url(images/arco-de-boda.png);">
-								</div>
-								<div class="timeline-panel">
-									<div class="timeline-body">
-										<p>07:45 PM. Recepción.</p>
-									</div>
-								</div>
-							</li>
-							<li class="animate-box">
-								<div class="timeline-badge" style="background-image:url(images/recien-casados.png);">
-								</div>
-								<div class="timeline-panel">
-									<div class="timeline-body">
-										<p>08:30 PM. Entrada novios.</p>
-									</div>
-								</div>
-							</li>
-							<li class="timeline-inverted animate-box">
-								<div class="timeline-badge" style="background-image:url(images/bebidas.png);"></div>
-								<div class="timeline-panel">
-									<div class="timeline-body">
-										<p>08:50 PM. Brindis.</p>
-									</div>
-								</div>
-							</li>
-							<li class="animate-box">
-								<div class="timeline-badge" style="background-image:url(images/pastel-de-boda.png);">
-								</div>
-								<div class="timeline-panel">
-									<div class="timeline-body">
-										<p>09:00 PM. Pastel.</p>
-									</div>
-								</div>
-							</li>
-							<li class="timeline-inverted animate-box">
-								<div class="timeline-badge" style="background-image:url(images/cena-romantica.png);">
-								</div>
-								<div class="timeline-panel">
-									<div class="timeline-body">
-										<p>09:10 PM. Banquete.</p>
-									</div>
-								</div>
-							</li>
-							<li class="animate-box">
-								<div class="timeline-badge" style="background-image:url(images/bailar.png);"></div>
-								<div class="timeline-panel">
-									<div class="timeline-body">
-										<p>10:10 PM. Vals.</p>
-									</div>
-								</div>
-							</li>
-							<li class="timeline-inverted animate-box">
-								<div class="timeline-badge" style="background-image:url(images/bola-de-espejos.png);">
-								</div>
-								<div class="timeline-panel">
-									<div class="timeline-body">
-										<p>10:30 PM. A bailar!!!</p>
-									</div>
-								</div>
-							</li>
-							<li class="animate-box">
-								<div class="timeline-badge" style="background-image:url(images/campanas-de-boda.png);">
-								</div>
-								<div class="timeline-panel">
-									<div class="timeline-body">
-										<p>01:45 AM. Cierre Evento</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/6.jpeg);">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<span>Nuestros eventos especiales</span>
-						<h2>Eventos de la boda</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="display-t">
-						<div class="display-tc">
-							<div class="col-md-10 col-md-offset-1">
-								<div class="col-md-6 col-sm-6 text-center">
-									<div class="event-wrap animate-box">
-										<h3>Ceremonia Religiosa</h3>
-										<div class="event-col">
-											<i class="icon-clock"></i>
-											<span>5:00 PM</span>
-											<span>6:00 PM</span>
-										</div>
-										<div class="event-col">
-											<i class="icon-calendar"></i>
-											<span>Domingo 30</span>
-											<span>Noviembre, 2025</span>
-										</div>
-										<p>Templo chico.<br>Ramón López Velarde Sur, Sta Maria de Guido,
-											<br>58090 Morelia, Mich.
-										</p>
-										<div>
-											<img class="btn btn-sm" src="images/mapa.png" class="img-responsive">
-											<a href="https://www.google.com/maps/dir/?api=1&destination=Temple+of+Santa+Maria+de+Guido,+Ram%C3%B3n+L%C3%B3pez+Velarde+Sur,+Tenencia+Santa+Maria+de+Guido,+Morelia,+Michoac%C3%A1n"
-												class="btn btn-default btn-sm">Ver ubicación</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-6 text-center">
-									<div class="event-wrap animate-box">
-										<h3>Banquete</h3>
-										<div class="event-col">
-											<i class="icon-clock"></i>
-											<span>7:45 PM</span>
-											<span>1:45 AM</span>
-										</div>
-										<div class="event-col">
-											<i class="icon-calendar"></i>
-											<span>Domingo 30</span>
-											<span>Noviembre, 2025</span>
-										</div>
-										<p>Jardín Ego<br>Thomas Jefferson, Roraima s/n, <br> 58090 Morelia, Mich.</p>
-										<div>
-											<img class="btn btn-sm" src="images/mapa.png" class="img-responsive">
-											<a href="https://www.google.com/maps/dir/?api=1&destination=Thomas+Jefferson,+Roraima+s%2Fn,+58090+Morelia,+Mich./@19.6744735,-101.1906632,15z"
-												class="btn btn-default btn-sm">Ver ubicación</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="fh5co-gallery" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<span>Nuestros recuerdos</span>
-						<h2>Galería</h2>
-						<p>Nuestra historia en imágenes, un recorrido hacia el ‘sí, acepto’.</p>
-						<div  id="gallery">
-
-						<div>
-							<img src="images/gallery/A1.JPG">
-							<img src="images/gallery/A2.JPG">
-							<img src="images/gallery/A3.JPG">
-							<img src="images/gallery/A4.JPG">
-						</div>
-
-
-						<div>
-							<img src="images/gallery/B1.jpg">
-							<img src="images/gallery/B2.jpg">
-							<img src="images/gallery/B3.jpg">
-						</div>
-
-
-						<div>
-							<img src="images/gallery/C1.png">
-							<img src="images/gallery/C2.png">
-							<img src="images/gallery/C3.png">
-							<img src="images/gallery/C4.png">
-						</div>
-
-					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
-		<div id="fh5co-testimonial">
-			<div class="container">
-				<div class="row">
-					<div class="row animate-box">
-						<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-							<h2>Sugerencia de regalo</h2>
-							<span>El mejor regalo es que compartan este día con nosotros, pero si desean tener un
-								detalle, agradeceremos una aportación en efectivo o por transferencia para seguir
-								construyendo nuestros sueños juntos.</span>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box">
-							<div class="wrap-testimony">
-
-								<div class="couple-half">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="images/sobre-de-dinero.png" alt="user">
-										</figure>
-										<span>Sobre con efectivo </span>
-										<blockquote>
-											<p>"No necesitamos platos ni tenedor… ¡un sobre con cariño sería lo mejor!"
-											</p>
-										</blockquote>
-									</div>
-								</div>
-								<div class="couple-half">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="images/tarjeta-de-credito.png" alt="user">
-										</figure>
-										<span>Transferencia. </span>BBVA Ricardo Ambriz<br>Cta. 4152314255262332</span>
-										<blockquote>
-											<p>"Ya tenemos la licuadora y el horno también… si quieres hacernos un
-												regalito, ¡una transferencia nos cae muy bien!"</p>
-										</blockquote>
-									</div>
-								</div>
-
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="fh5co-services" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>Código de vestimenta:</h2>
-						<p>Lo más importante es tu comodidad, pero nos encantaría que nos acompañaras con vestimenta
-							formal</p>
-						<div class="feature-center animate-box">
-							<div>
-								<figure>
-									<img src="images/boda.png" alt="user">
-								</figure>
-							</div>
-							<p>Favor de evitar vestido blanco o similares y vestidos color verde esmeralda.</p>
-						</div>
-						<audio id="audio" controls autoplay>
-							<source src="music/music.ogg" type="audio/ogg">
-							Your browser does not support the audio element.
-						</audio>
-
-					</div>
-
-				</div>
-
-			</div>
-		</div>
-
-
-	</div>
-	</div>
-
-
-	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/final.jpeg);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>¡Nos encantaría contar contigo!</h2>
-					<p>Por favor, llena el formulario para confirmar tu asistencia.</br>¡Gracias!</p>
-				</div>
-			</div>
-
-			<div class="row animate-box">
-				<div class="col-md-10 col-md-offset-1">
-					<form class="form-inline" hidden>
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="name" class="sr-only">Name</label>
-								<input type="name" class="form-control" id="name" placeholder="Name">
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Email">
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-block">I am Attending</button>
-						</div>
-					</form>
-
-					<p style="text-align: center;"><a href="#" onclick="getPases()"
-							class="btn btn-default btn-sm">Confirmar asistencia</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
-
-
-
-		</div>
-	</footer>
-	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
-
-	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-
-	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
-	<script src="js/simplyCountdown.js"></script>
-	<!-- Main -->
-	<script src="js/main.js"></script>
-
-	<script>
-		var d = new Date(2025, 11, 30, 17, 0, 0);
-
-		// default example
-		simplyCountdown('.simply-countdown-one', {
-			year: d.getFullYear(),
-			month: d.getMonth(),
-			day: d.getDate()
-		});
-
-		//jQuery example
-		$('#simply-countdown-losange').simplyCountdown({
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate(),
-			enableUtc: false
-		});
-	</script>
-
-</body>
-
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Wedding HTML-5 Template </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="assets/css/flaticon.css">
+            <link rel="stylesheet" href="assets/css/slicknav.css">
+            <link rel="stylesheet" href="assets/css/animate.min.css">
+            <link rel="stylesheet" href="assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="assets/css/themify-icons.css">
+            <link rel="stylesheet" href="assets/css/slick.css">
+            <link rel="stylesheet" href="assets/css/nice-select.css">
+            <link rel="stylesheet" href="assets/css/style.css">
+   </head>
+
+   <body>
+       
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+
+    <header>
+        <!-- Header Start -->
+       <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2 col-md-2">
+                            <div class="logo">
+                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-10">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>                              
+                                    <ul id="navigation">    
+                                        <li><a href="our_story.html"> Our Story</a></li>
+                                        <li><a href="location.html">Location</a></li>
+                                        <li><a href="gallery.html">Gallery</a></li>
+                                        <li><a href="booking.html">Guest Book</a></li>
+                                        <li><a href="#">Pages</a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="single-blog.html">Blog Details</a></li>
+                                                <li><a href="elements.html">Element</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div> 
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+        <!-- Header End -->
+    </header>
+
+    <main>
+        <!-- Slider Area Start-->
+        <div class="slider-area ">
+            <div class="slider-active">
+                <div class="single-slider slider-height hero-overly d-flex align-items-center" data-background="assets/img/hero/homeHero_1.jpg">
+                    <div class="container">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-lg-7 col-md-9 ">
+                                <div class="hero__caption text-center d-flex align-items-center caption-bg">
+                                   <div class="circle-caption">
+                                        <span  data-animation="fadeInUp" data-delay=".3s">Feb 14 2020</span>
+                                        <h1  data-animation="fadeInUp" data-delay=".5s">Julia & Jakson</h1>
+                                        <p  data-animation="fadeInUp" data-delay=".9s">We are getting married</p>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-slider slider-height hero-overly d-flex align-items-center" data-background="assets/img/hero/homeHero_2.jpg">
+                    <div class="container">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-lg-7 col-md-9 ">
+                                <div class="hero__caption text-center d-flex align-items-center caption-bg">
+                                   <div class="circle-caption">
+                                        <span  data-animation="fadeInUp" data-delay=".3s">Feb 14 2020</span>
+                                        <h1  data-animation="fadeInUp" data-delay=".5s">Julia & Jakson</h1>
+                                        <p  data-animation="fadeInUp" data-delay=".9s">We are getting married</p>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Area End-->
+        <!-- Our Story Start -->
+        <div class="Our-story-area story-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="story-img mb-100">
+                             <img src="assets/img/our_story/story-img.jpg" class="story-imges" alt="">
+                             <!-- shape flower -->
+                             <div class="shape-flower-img">
+                                <img src="assets/img/our_story/flower_top.png" class="flower-top" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="story-caption">
+                            <img src="assets/img/our_story/flower_right.png" alt="">
+                            <h3>Our Story</h3>
+                            <p class="story1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p class="story2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- shape -->
+            <div class="shape-flower d-none d-xl-block">
+                <img src="assets/img/our_story/shape_left.png" class="flower1" alt="">
+                <img src="assets/img/our_story/shape_right.png" class="flower2 " alt="">
+            </div>
+        </div>
+        <!-- Our Story Ende -->
+        <!-- Services Area Start-->
+        <div class="service-area ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="singl-services text-center mb-60">
+                            <div class="top-caption">
+                                <h4>Rehearsal Dinner</h4>
+                                <p>July 20, 2020</p>
+                            </div>
+                            <div class="services-img">
+                                <img src="assets/img/service/service1.png" alt="">
+                                <div class="back-flower">
+                                    <img src="assets/img/service/services_flower1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="bottom-caption">
+                                <span>12:00PM-2:00PM</span>
+                                <p>The Sierra Resort 14<br> Pacific Grove Monterey, CA</p>
+                            </div>
+                        </div> 
+                    </div><div class="col-lg-4">
+                        <div class="singl-services text-center mb-60">
+                            <div class="top-caption">
+                                <h4>The Ceremony</h4>
+                                <p>July 20, 2020</p>
+                            </div>
+                            <div class="services-img">
+                                <img src="assets/img/service/service2.png" alt="">
+                                <div class="back-flower">
+                                    <img src="assets/img/service/services_flower1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="bottom-caption">
+                                <span>12:00PM-2:00PM</span>
+                                <p>The Sierra Resort 14<br> Pacific Grove Monterey, CA</p>
+                            </div>
+                        </div> 
+                    </div><div class="col-lg-4">
+                        <div class="singl-services text-center mb-60">
+                            <div class="top-caption">
+                                <h4>Afterparty</h4>
+                                <p>July 20, 2020</p>
+                            </div>
+                            <div class="services-img">
+                                <img src="assets/img/service/service3.png" alt="">
+                                <div class="back-flower">
+                                    <img src="assets/img/service/services_flower1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="bottom-caption">
+                                <span>12:00PM-2:00PM</span>
+                                <p>The Sierra Resort 14<br> Pacific Grove Monterey, CA</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+             </div>
+        </div>
+        <!-- Services Area End-->
+        <!-- our Memories start -->
+        <div class="our-memories-area section-padding2">
+            <div class="container">
+                <!-- section tittle -->
+                <div class="row ">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <img src="assets/img/memories/section_tittle_flowre.png" alt="">
+                            <h2>OUR MEMORIES</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="memory">
+                            <div class="memories-img">
+                                <img src="assets/img/memories/memories1.jpg" alt="">
+                                <div class="menorie-icon" href="assets/img/memories/memories1.jpg">
+                                    <i class="ti-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-lg-4 col-md-4">
+                        <div class="memory">
+                            <div class="memories-img">
+                                <img src="assets/img/memories/memories2.jpg" alt="">
+                                <div class="menorie-icon" href="assets/img/memories/memories2.jpg">
+                                    <i class="ti-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-lg-4 col-md-4">
+                        <div class="memory">
+                            <div class="memories-img">
+                                <img src="assets/img/memories/memories3.jpg" alt="">
+                                <div class="menorie-icon" href="assets/img/memories/memories3.jpg">
+                                    <i class="ti-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="memory">
+                            <div class="memories-img">
+                                <img src="assets/img/memories/memories4.jpg" alt="">
+                                <div class="menorie-icon" href="assets/img/memories/memories4.jpg">
+                                    <i class="ti-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="memory">
+                            <div class="memories-img">
+                                <img src="assets/img/memories/memories5.jpg" alt="">
+                                <div class="menorie-icon" href="assets/img/memories/memories5.jpg">
+                                    <i class="ti-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                    <div class="col-lg-4 col-md-4">
+                        <div class="memory">
+                            <div class="memories-img">
+                                <img src="assets/img/memories/memories2.jpg" alt="">
+                                <div class="menorie-icon" href="assets/img/memories/memories2.jpg">
+                                    <i class="ti-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                </div>
+            </div>
+            <!-- Shape Img -->
+            <div class="memories-shape d-none d-xl-block">
+                <img src="assets/img/memories/left-img.png" class="memories-shape1" alt="">
+                <img src="assets/img/memories/right-img.png" class="memories-shape2" alt="">
+            </div>
+        </div>
+        <!-- our Memories End-->
+        <!-- Gift Start -->
+        <div class="gift-area gift-padding gift-overly" data-background="assets/img/memories/gft.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class=" offset-lg-1 col-12">
+                        <div class="gift-caption">
+                            <h2>The Best Gift</h2>
+                            <p>Will be your bresentation</p>
+                            <a href="#" class="btn">R.S.V.P</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Gift End -->
+
+    
+        <!-- Contact form Start -->
+        <div class="contact-form section-padding2 fix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
+                        <div class="form-wrapper">
+                             <!-- section tittle -->
+                            <div class="row ">
+                                <div class="col-lg-12">
+                                    <div class="section-tittle tittle-form text-center">
+                                        <img src="assets/img/memories/section_tittle_flowre.png" alt="">
+                                        <h2>Are you attending?</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <form id="contact-form" action="#" method="POST">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-box mb-30">
+                                            <input type="text" name="name" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-box subject-icon mb-30">
+                                            <input type="Email" name="subject" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mb-30">
+                                        <div class="select-itms">
+                                            <select name="select" id="select2">
+                                                <option value="">1 Guest</option>
+                                                <option value="">2 Guest</option>
+                                                <option value="">3 Guest</option>
+                                                <option value="">4 Guest</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-box message-icon mb-30">
+                                            <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                                        </div>
+                                    <div class="submit-info">
+                                            <button class="btn2" type="submit">R.S.V.P</button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Shape inner Flower -->
+                            <div class="shape-inner-flower">
+                                <img src="assets/img/flower/form-smoll-left.png" class="top1" alt="">
+                                <img src="assets/img/flower/form-smoll-right.png" class="top2" alt="">
+                                <img src="assets/img/flower/form-smoll-b-left.png"class="top3"  alt="">
+                                <img src="assets/img/flower/form-smoll-b-right.png"class="top4"  alt="">
+                            </div>
+                            <!-- Shape outer Flower -->
+                            <div class="shape-outer-flower">
+                                <img src="assets/img/flower/from-top.png" class="outer-top" alt="">
+                                <img src="assets/img/flower/from-bottom.png" class="outer-bottom" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact form End -->
+
+        <!-- ================ Map ================= -->
+        <section class="contact-sections">
+            <div class="d-area">
+                <div id="map" style="height: 500px; position: relative; overflow: hidden;"></div>
+                <script>
+                    function initMap() {
+                        var uluru = {
+                            lat: -25.363,
+                            lng: 131.044
+                        };
+                        var grayStyles = [{
+                                featureType: "all",
+                                stylers: [{
+                                        saturation: -90
+                                    },
+                                    {
+                                        lightness: 50
+                                    }
+                                ]
+                            },
+                            {
+                                elementType: 'labels.text.fill',
+                                stylers: [{
+                                    color: '#ccdee9'
+                                }]
+                            }
+                        ];
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            center: {
+                                lat: -31.197,
+                                lng: 150.744
+                            },
+                            zoom: 9,
+                            styles: grayStyles,
+                            scrollwheel: false
+                        });
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
+                </script>
+            </div>
+        </section>
+         <!-- ================ Map ================= -->
+
+         <div class="brand-area section-padding2">
+            <div class="container">
+                 <!-- section tittle -->
+                 <div class="row ">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <img src="assets/img/memories/section_tittle_flowre.png" alt="">
+                            <h2>OUR LOVELY PARTNERS</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="brand-active brand-border">
+                    <div class="single-brand">
+                        <img src="assets/img/service/brand1.jpg" alt="">
+                    </div>
+                    <div class="single-brand">
+                        <img src="assets/img/service/brand2.jpg" alt="">
+                    </div>
+                    <div class="single-brand">
+                        <img src="assets/img/service/brand3.jpg" alt="">
+                    </div>
+                    <div class="single-brand">
+                        <img src="assets/img/service/brand4.jpg" alt="">
+                    </div>
+                    <div class="single-brand">
+                        <img src="assets/img/service/brand5.jpg" alt="">
+                    </div>
+                    <div class="single-brand">
+                        <img src="assets/img/service/brand3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+   <footer>
+    <!-- Footer Start-->
+      <div class="footer-main footer-bg">
+        <div class="footer-area footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-md-5 col-sm-8">
+                       <div class="single-footer-caption mb-50">
+                         <div class="single-footer-caption mb-30">
+                              <!-- logo -->
+                             <div class="footer-logo">
+                                 <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                             </div>
+                             <div class="footer-tittle">
+                                 <div class="footer-pera">
+                                     <p class="info1">Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                                     <p class="info2">theaisle@elated-themes.com</p>
+                                     <p class="info2">+(123) 456 - 7890 - 456 - 7890</p>
+                                     <p class="info2"> 35 W 46nd Street New York</p>
+                                </div>
+                             </div>
+                         </div>
+                       </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-5 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>WEDDING PLANNER FAQS</h4>
+                                <ul>
+                                    <li><a href="#">Why Hire a Planner?</a></li>
+                                    <li><a href="#">How Can I Make An</a></li>
+                                    <li><a href="#">Appointment?</a></li>
+                                    <li><a href="#">How to Choose a Venue</a></li>
+                                    <li><a href="#">Event Catalogue</a></li>
+                                    <li><a href="#"> Accept</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-5 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>ABOUT US</h4>
+                                <ul>
+                                    <li><a href="#">Bridesmaids</a></li>
+                                    <li><a href="#">November 22, 2020</a></li>
+                                    <li><a href="#">Groomsmen</a></li>
+                                    <li><a href="#">November 22, 2020</a></li>
+                                    <li><a href="#">JEWELRY</a></li>
+                                    <li><a href="#">November 22, 2020</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Instagram</h4>
+                            </div>
+                            <div class="instagram-gellay">
+                                <ul class="insta-feed">
+                                    <li><a href="#"><img src="assets/img/post/instra1.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="assets/img/post/instra2.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="assets/img/post/instra3.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="assets/img/post/instra4.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="assets/img/post/instra5.jpg" alt=""></a></li>
+                                    <li><a href="#"><img src="assets/img/post/instra6.jpg" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer-bottom aera -->
+        <div class="footer-bottom-area footer-bg">
+            <div class="container">
+                <div class="footer-border">
+                     <div class="row d-flex align-items-center">
+                         <div class="col-xl-12 ">
+                             <div class="footer-copy-right text-center">
+                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+      </div>
+     <!-- Footer End-->
+   </footer>
+   
+	<!-- JS here -->
+	
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="./assets/js/owl.carousel.min.js"></script>
+        <script src="./assets/js/slick.min.js"></script>
+        <!-- Date Picker -->
+        <script src="./assets/js/gijgo.min.js"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="./assets/js/wow.min.js"></script>
+		<script src="./assets/js/animated.headline.js"></script>
+        <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="./assets/js/jquery.scrollUp.min.js"></script>
+        <script src="./assets/js/jquery.nice-select.min.js"></script>
+		<script src="./assets/js/jquery.sticky.js"></script>
+        
+        <!-- contact js -->
+        <script src="./assets/js/contact.js"></script>
+        <script src="./assets/js/jquery.form.js"></script>
+        <script src="./assets/js/jquery.validate.min.js"></script>
+        <script src="./assets/js/mail-script.js"></script>
+        <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="./assets/js/plugins.js"></script>
+        <script src="./assets/js/main.js"></script>
+        
+    </body>
 </html>
