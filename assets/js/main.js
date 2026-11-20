@@ -251,9 +251,9 @@
   $('.brand-active').slick({
     dots: false,
     infinite: true,
-    speed: 300,
+    speed: 600,
     autoplay:true,
-    speed: 1000,
+    speed: 2000,
     arrows: false,
     slidesToShow: 5,
     slidesToScroll: 1,
