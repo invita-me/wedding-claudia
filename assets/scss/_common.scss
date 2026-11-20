@@ -5,6 +5,24 @@
 /* 1. Theme default css */
 
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Poppins:100i,200,300,400,500,600,700,800,900&display=swap');
+
+.brand-active {
+	margin-bottom: 20px;
+
+	.slick-slide {
+		padding: 0 5px;
+	}
+
+	.slick-slide img {
+		width: 100%;
+		height: auto;
+	}
+
+	@media #{$xs} {
+		margin-bottom: 10px;
+	}
+}
+
  body {
 	font-family: $font_2;
 	font-weight: normal;

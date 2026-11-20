@@ -2837,14 +2837,14 @@ hr {
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider-area .hero__caption .circle-caption h1 {
-        font-size: 50px;
+        font-size: 44px;
         line-height: 1.2
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .slider-area .hero__caption .circle-caption h1 {
-        font-size: 34px;
+        font-size: 30px;
         line-height: 1.2;
         margin-bottom: 10px
     }
@@ -2860,7 +2860,7 @@ hr {
 
 @media (max-width: 767px) {
     .slider-area .hero__caption .circle-caption h1 {
-        font-size: 27px;
+        font-size: 23px;
         line-height: 1.4;
         margin-bottom: 8px
     }
@@ -6615,4 +6615,23 @@ del {
 
 .switch-wrap {
     margin-bottom: 10px
+}
+
+.brand-active {
+    margin-bottom: 20px;
+}
+
+.brand-active .slick-slide {
+    padding: 0 5px;
+}
+
+.brand-active .slick-slide img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .brand-active {
+        margin-bottom: 10px;
+    }
 }
